@@ -10,13 +10,21 @@ class App extends Component {
 
       this.state={
         isRegistered:false,
+        name:null,
+        email:null,
+        password:null
       }
+    }
+    
+     registerHandle=(event)=>{
+       
+        event.preventdefault()
     }
 
     render(){
       return (
         <div>
-          {this.state.isRegistered ? <Greet/>:<Registration/>}
+          {this.state.isRegistered ? <Greet/>:<Registration submit={this.registerHandle}/>}
           </div>
       );
           
